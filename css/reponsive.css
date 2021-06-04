@@ -1,0 +1,117 @@
+/* PC */
+@media screen and (min-width: 64em){
+    #header .mobile-menu-btn{
+        display: none;
+    }
+}
+/* Tablet + Mobile */
+@media screen and (max-width: 63.9375em) {
+    #content .contact-form .form-control{
+        padding: 15px;
+    }
+    .contact-form .btn-submit{
+        padding: 15px 16px;
+    }
+    #footer .social-list{
+        font-size: 41px;
+    }
+    #footer .social-list a{
+        margin: 0 8px;
+    }
+    #footer .coppy-right a{
+        padding: 14px 0;
+        display: inline-block;
+    }
+    #nav .subnav li a{
+        padding: 4px 12px;
+    }
+    #content .contact-info{
+        line-height: 2;
+    }
+
+}
+
+/* Tablet */
+@media screen and (min-width: 46.25em) and (max-width: 63.9375em){
+
+}
+
+/* Mobile */
+@media screen and (max-width: 46.1875em) {
+    .s-full-width,
+    .s-col-1{
+        width: 100% !important;
+    }
+    
+    .s-mt-8{
+        margin-top: 8px !important;
+    }
+
+
+    #header{
+        overflow: hidden;
+    }
+
+    #header .mobile-menu-btn{
+        display: block;
+    }
+
+    #header .search-btn{
+        display: none;
+    }
+    
+    #nav {
+        display: block;
+    }
+
+    #nav > li{
+        display: block;
+    }
+    
+    #nav > li:first-child{
+        display: inline-block;
+    }
+
+    #nav li a{
+        padding: 1px 24px;
+    }
+
+    #nav .subnav{
+        position: initial;  /* Giá trị mặc định, sẽ loại bỏ absolute */
+        background: #333;
+    }
+
+    #nav .subnav li a{
+        color: #fff;
+        padding: 5px 40px;
+    }
+
+    #content .member-mobile{
+        margin-top: 30px;
+        width: 100%;
+    }
+
+    #content .member-img{
+        width: 60%;
+    }
+    #content .place-heading{
+        font-size: 20px;
+    }
+    #content .place-desc{
+        text-overflow: ellipsis;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+    }
+
+    #content .contact-form{
+        margin-top: 32px;
+    }
+
+    #content .place-btn{
+        text-align: center;
+        text-transform: uppercase;
+    }
+   
+}

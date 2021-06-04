@@ -1,0 +1,486 @@
+/* Reset Css*/
+*{
+    /* Emmet */
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* 
+    1. Từ ngoài vào trong
+    2. Từ trên xuống dưới
+    3. Tổng quan đến chi tiết
+*/
+/*
+    1. Vị trí
+    2. Kích thước ( width, height)
+    3. Màu sắc
+    4. Kiểu dáng ( kiểu chữ, hình vuông,... )
+*/
+/* Dùng chung */
+html{
+    font-family: Arial, Helvetica, sans-serif;
+    scroll-behavior: smooth;
+}
+
+.clear{
+    clear: both;
+}
+
+.text-white-color{
+    color: #fff !important;
+}
+
+.text-center{
+    text-align: center !important;
+}
+
+.mt-8{
+    margin-top: 8px !important;
+}
+
+.mt-16{
+    margin-top: 16px !important;
+}
+
+.row{
+    margin-left: -8px;
+    margin-right: -8px;
+}
+
+.row::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.col{
+    float: left;
+    padding: 0 8px;
+}
+
+.col-1{
+    width: 100%;
+}
+
+.col-2{
+    width: calc(100%/2);
+    /*hoặc cũng có thể viết width: 50%;*/
+}
+
+.col-3{
+    width: calc(100%/3);
+}
+
+.col-4{
+    width: calc(100%/4);
+}
+
+
+
+/* Main*/
+#main {
+
+}
+
+/* =================    Begin: Header Nav     =========== */
+
+#header {
+    position: fixed;
+    height: 46px;
+    background-color: #000;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    
+}
+
+#nav > li{
+    display: inline-block;  /* chỉnh sao cho thẻ li nằm ngang */
+}
+#nav li{
+    position: relative;
+   
+}
+
+#nav, .subnav{
+    list-style-type: none;
+}
+
+#nav > li > a{
+    color: #fff;
+    text-transform: uppercase;
+}
+
+#nav li a{
+    font-size: 22px;
+    font-weight: 500;
+  
+    line-height: 46px;  /* xác định chiều cao dòng = chiều cao của thẻ id header */
+    text-decoration: none;
+    padding: 0 24px;
+    display: block;
+    /* thuộc tính mặc định của thẻ a là in-line nên ta chọn 
+    display là inline-block cho nó hiển thị dòng theo khối của thẻ line-height */
+  
+} 
+
+#nav li:hover .subnav{
+    display: block;
+}
+
+/* khi ta hover thẻ li thì tất cả thẻ a là con của li sẽ  bị thay đổi*/  
+#nav > li:hover > a ,
+#nav .subnav li:hover a {
+    background-color: #ccc;
+    color: #000;
+    
+}   
+ 
+#nav .subnav{
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    min-width: 180px;
+}
+
+#nav .subnav li a{
+    color: rgb(0, 0, 0);
+    padding: 0 12px;
+    line-height: 38px;
+}
+
+#nav .icon-arrow-down{
+    font-size: 16px;
+    padding-left: 5px;
+}
+#nav{
+    display: inline-block;
+}
+/* ===================       Kết thúc Header Nav      ==============*/
+/* ===================       Begin Header  Search     ===============*/
+#header .mobile-menu-btn,
+#header .search-btn{
+    float: right;
+}
+
+#header .mobile-menu-btn{
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+}
+
+#header .search-btn:hover{
+    background-color: #f44336;
+    cursor: pointer;
+}
+
+#header .mobile-menu-btn:hover{
+    background-color: #ccc;
+}
+
+#header .mobile-menu-btn:hover .icon-mobile-search{
+    color: #000;
+}
+
+#header .icon-mobile-search,
+#header .icon-search{
+    color: #fff;
+    font-size: 20px;
+    padding: 0 21px;
+    line-height: 46px;
+}
+/* ====================       End: Header  Search      ==============*/
+
+
+
+#slider {
+    position: relative;
+    margin-top: 46px;
+    padding-top: 50%;
+    background: url('../img/slider/chicago.jpg') top center / cover no-repeat;
+}
+
+#slider .text-content {
+    width: 100%;        /* Cho content nằm giữa */
+    position: absolute;
+    bottom: 50px;
+    /* Ngoài width:100% ta còn Có nhiều cách cho content nằm giữa, Cách 1*/
+    /* left: 0;
+    right: 0; */
+
+    /* Cách 2*/
+    /* left: 50%;
+    transform: translateX(-50%); */
+    text-align: center;
+    color: #fff;
+}
+
+#slider .text-title {
+    font-weight: 900;
+    font-size: 24px;
+
+}
+
+#slider .text-description {
+    margin-top: 20px;
+    font-size: 15px;
+    text-shadow: 0 0 1px #333;
+}
+
+/* Star: About content */
+
+#content .content-section{
+    width: 800px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 64px 0 112px;
+    padding-left: 16px;  /* Phần 9 bài 52: vì margin-left và margin-right : -8px, nó kéo dãn website khi responsive table */
+    padding-right: 16px; /* Phần 9 bài 52 */
+}
+
+#content .section-heading{
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 30px;
+    letter-spacing: 4px;
+}
+
+#content .section-sub-heading{
+    text-align: center;
+    font-size: 15px;
+    font-style: italic;
+    font-weight: 400;
+    color: rgb(0, 0, 0);
+    opacity: 0.6;
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+#content .about-text{
+    text-align: justify;
+    font-size: 15px;
+    line-height: 1.6;
+}
+/* Star: Members-list*/
+#content .members-list{
+    margin-top: 32px;
+}
+
+.member-item {
+    float: left;
+    width: calc( 100% / 3);
+    text-align: center;
+
+}
+
+#content .member-img{
+    width: 154px;
+    border-radius: 4px;
+    margin-top: 15px;
+
+}
+
+#content .member-name{
+    font-size: 16px;
+
+}
+
+/*  Star: Tour content       ==============*/
+
+#content .tour-section{
+    background: #000;
+}
+
+#content .ticket-list{
+    background: #fff;
+    margin-top: 40px;
+}
+
+#content .ticket-list li{
+    color: #757575;
+    font-size: 15px;
+    padding: 12px 16px;
+    border-bottom: 1px solid #ddd;
+    list-style-type: none;
+}
+
+#content .ticket-list .sold-out{
+    color: #fff;
+    background: red;
+    padding: 3px 4px;
+    margin-left: 16px;
+}
+
+#content .ticket-list .quantity{
+    float: right;
+    background: #000;
+    color: #fff;
+    width: 24px;
+    height: 24px;
+    text-align: center;
+    line-height: 24px;
+    border-radius: 50%;
+    margin-top: -3px;
+}
+
+/*====================*/
+#content .places-list{
+    margin-top: 16px;
+    /* margin-left: -8px;
+    margin-right: -8px; 
+    Vì đã có class row đặt ở phần chung trên đầu */
+   
+}
+
+/* #content .place-item{
+    /* float: left;
+    padding: 0 8px; 
+    Vì đã có .col đặt ở phần chung*/
+    /* width: 33.3333%; */ 
+
+
+#content .place-img{
+    width: 100%;
+    display: block;
+}
+
+#content .place-img:hover{
+    opacity: 0.6;
+}
+
+#content .place-body{
+    font-size: 15px;
+    background: #fff;
+    padding: 16px;
+}
+
+#content .place-heading{
+    font-size: 15px;
+    font-weight: 600;
+}
+
+#content .place-time{
+    margin-top: 15px;
+    color: #757575;
+}
+
+#content .place-desc{
+    margin-top: 15px;
+    line-height: 1.4;
+}
+
+#content .place-btn{
+    background: #000;
+    color: #fff;
+    padding: 11px 16px;
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-block;
+    margin-top: 15px;
+}
+#content .place-btn:hover{
+    background: #ccc;
+    color: #000;
+}
+/* Star: Contact Section*/
+/* Contact Left */
+
+#content .contact-content{
+    margin-top: 50px;
+   
+}
+
+#content .contact-info{
+    font-size: 18px;
+    line-height: 1.6;
+    
+} 
+
+#content .contact-info a{
+    color: #0082f5;
+    opacity: 0.8;
+    text-decoration: none;
+}
+
+#content .contact-info a:hover{
+    opacity: 1;
+}
+
+
+#content .contact-info i[class*="ti-"] {
+    width: 30px;
+    display: inline-block;
+}
+/* Contact Right*/
+
+#content .contact-form{
+    font-size: 15px;
+}
+
+#content .contact-form .form-control{
+    padding: 10px;
+    border: 1px solid #ccc;
+    width: 100%;
+}
+
+.contact-form .btn-submit{
+    padding: 11px 16px;
+    background: #000;
+    color: #fff;
+    border: none;
+    font-size: 15px;
+    text-transform: uppercase;
+    float: right;
+}
+
+.contact-form .btn-submit:hover{
+    background: #ccc;
+    color: #000;
+    cursor: pointer;
+}
+/* End: Contact-Section */
+/* Star: Map Section */
+.map-section img {
+    width: 100%;
+    /* background: url('/assets/img/map.jpg') center / cover no-repeat; */
+    filter: grayscale(50%);
+}
+
+
+#footer {
+    padding: 64px 16px;
+    text-align: center;
+}
+
+#footer .social-list{
+    font-size: 25px;
+}
+#footer .social-list a{
+    color: rgba(0,0,0,0.6);
+    text-decoration: none;
+}
+#footer .coppy-right a:hover,
+#footer .social-list a:hover{
+    color: rgba(0,0,0,0.3);
+}
+
+#footer .coppy-right{
+    margin-top: 15px;
+    color: rgba(0,0,0,0.6);
+    font-size: 14px;
+}
+#footer .coppy-right a{
+    color: rgba(0,0,0,0.6);
+
+}
+
+
+
